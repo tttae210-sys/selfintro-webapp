@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>박태경 | 자기소개</title>
+<style>
+  :root { --bg:#f7f8fa; --card:#fff; --ink:#1f2937; --sub:#6b7280; --accent:#2563eb; --line:#e5e7eb; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:"Noto Sans KR","Malgun Gothic",system-ui,sans-serif; color:var(--ink); background:var(--bg); line-height:1.7; }
+  header { position:sticky; top:0; background:rgba(255,255,255,.92); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); z-index:10; }
+  nav { max-width:880px; margin:0 auto; padding:14px 20px; display:flex; gap:22px; align-items:center; }
+  nav strong { margin-right:auto; }
+  nav a { color:var(--ink); text-decoration:none; font-size:15px; }
+  nav a:hover { color:var(--accent); }
+  section { max-width:880px; margin:0 auto; padding:64px 20px 8px; }
+  h1 { font-size:40px; margin:0 0 6px; }
+  h2 { font-size:24px; margin:0 0 18px; }
+  .sub { color:var(--sub); }
+  .hero { padding-top:90px; }
+  .badges { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .badge { background:#e8efff; color:var(--accent); border-radius:999px; padding:4px 14px; font-size:14px; font-weight:600; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:22px; }
+  .card h3 { margin:0 0 4px; font-size:19px; }
+  .card .period { color:var(--sub); font-size:14px; margin-bottom:8px; }
+  .btn { display:inline-block; margin-top:12px; padding:8px 16px; border-radius:8px; background:var(--ink); color:#fff; text-decoration:none; font-size:14px; border:0; cursor:pointer; font-family:inherit; }
+  .btn:hover { background:var(--accent); }
+  form { display:grid; gap:10px; margin-bottom:20px; }
+  input, textarea { font-family:inherit; font-size:15px; padding:10px 12px; border:1px solid var(--line); border-radius:8px; width:100%; }
+  .row { display:flex; gap:10px; }
+  .row input:first-child { max-width:160px; }
+  .msg { border-bottom:1px solid var(--line); padding:12px 0; }
+  .msg b { margin-right:8px; }
+  .msg time { color:var(--sub); font-size:13px; }
+  .err { color:#dc2626; font-size:14px; min-height:20px; }
+  footer { max-width:880px; margin:0 auto; padding:48px 20px; color:var(--sub); font-size:14px; }
+</style>
+</head>
+<body>
+<header><nav>
+  <strong>박태경</strong>
+  <a href="#about">소개</a><a href="#projects">프로젝트</a><a href="#contact">연락처</a><a href="#guestbook">방명록</a>
+</nav></header>
+
+<!-- S01 Home -->
+<section class="hero" id="home">
+  <h1>박태경</h1>
+  <p class="sub">강원대학교 컴퓨터공학과</p>
+  <p>AWS 클라우드 위에서 직접 만들고 배포하며 배우는 개발자입니다.</p>
+</section>
+
+<!-- S02 소개 -->
+<section id="about">
+  <h2>소개</h2>
+  <p>컴퓨터공학을 전공하며 클라우드 서비스를 활용한 웹 서비스 개발에 관심을 갖고 있습니다. 문제를 작게 나누고 AWS로 빠르게 구현해 보는 것을 좋아합니다.</p>
+  <div class="badges">
+    <span class="badge">AWS</span><span class="badge">Python</span><span class="badge">React</span><span class="badge">PostgreSQL</span>
+  </div>
+</section>
+
+<!-- S03 프로젝트 -->
+<section id="projects">
+  <h2>프로젝트</h2>
+  <div class="cards">
+    <div class="card">
+      <h3>GitInsight 2.0</h3>
+      <div class="period">2026</div>
+      <p>GitHub 활동을 분석해 AI 기술면접 질문을 만들어 주는 면접 코치 서비스입니다.</p>
+      <p class="sub">사용 기술: AWS, Python</p>
+      <a class="btn" href="#" target="_blank" rel="noopener">GitHub 보기</a>
+    </div>
+    <div class="card">
+      <h3>사찰 순례 지도</h3>
+      <div class="period">2026</div>
+      <p>전국 사찰 방문 기록을 지도에 남기는 웹앱입니다.</p>
+      <p class="sub">사용 기술: React, Azure</p>
+      <a class="btn" href="#" target="_blank" rel="noopener">GitHub 보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- S04 연락처 -->
+<section id="contact">
+  <h2>연락처</h2>
+  <p>이메일: <a id="email" href="mailto:may621@naver.com">may621@naver.com</a></p>
+  <p>GitHub: <a href="#" target="_blank" rel="noopener">github.com/your-id</a></p>
+</section>
+
+<!-- S05 방명록 -->
+<section id="guestbook">
+  <h2>방명록</h2>
+  <form id="gb-form">
+    <div class="row">
+      <input id="gb-name" maxlength="10" placeholder="이름 (최대 10자)">
+      <input id="gb-msg" maxlength="100" placeholder="한 줄 메시지 (최대 100자)">
+      <button class="btn" type="submit" style="margin:0">등록</button>
+    </div>
+    <div class="err" id="gb-err"></div>
+  </form>
+  <div id="gb-list"></div>
+</section>
+
+<footer>© 2026 박태경</footer>
+
+<script>
+// 방명록: 현재는 화면에서만 동작합니다. (이후 AppSync + DynamoDB 연동으로 교체)
+const list = document.getElementById('gb-list');
+const items = [];
+function render() {
+  list.innerHTML = '';
+  items.slice().reverse().forEach(m => {
+    const d = document.createElement('div'); d.className = 'msg';
+    const b = document.createElement('b'); b.textContent = m.name;
+    const t = document.createElement('time'); t.textContent = m.time;
+    const p = document.createElement('div'); p.textContent = m.msg;
+    d.append(b, t, p); list.appendChild(d);
+  });
+}
+document.getElementById('gb-form').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('gb-name').value.trim();
+  const msg = document.getElementById('gb-msg').value.trim();
+  const err = document.getElementById('gb-err');
+  if (!name || !msg) { err.textContent = '이름과 메시지를 모두 입력해 주세요.'; return; }
+  err.textContent = '';
+  items.push({ name, msg, time: new Date().toLocaleString('ko-KR') });
+  e.target.reset(); render();
+});
+</script>
+</body>
+</html>
